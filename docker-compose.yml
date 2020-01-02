@@ -1,0 +1,19 @@
+---
+version: '2.4'
+services:
+  tomcat-server1:
+    build:
+      dockerfile: Dockerfile
+      context: ./tomcat_docker1/
+    image: tomcat-server1:latest
+    container_name: tomcat-server1
+    ports:
+      - 9090:8080
+  tomcat-server2:
+    build:
+      dockerfile: Dockerfile
+      context: ./tomcat_docker2/
+    image: tomcat-server2:latest
+    container_name: tomcat-server2
+    ports:
+      - 8080:8080
